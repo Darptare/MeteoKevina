@@ -3,18 +3,19 @@
 package packages.Vue.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import packages.Vue.Carte;
 import packages.Vue.Fenetre;
 import packages.Vue.VuePackage;
+import test.Demo;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,7 @@ import packages.Vue.VuePackage;
  * </ul>
  * </p>
  *
- * @generated
+ * @generated NOT
  */
 public class FenetreImpl extends MinimalEObjectImpl.Container implements Fenetre {
 	/**
@@ -100,12 +101,12 @@ public class FenetreImpl extends MinimalEObjectImpl.Container implements Fenetre
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void start() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		new Demo().setVisible(true);
+		
 	}
 
 	/**
