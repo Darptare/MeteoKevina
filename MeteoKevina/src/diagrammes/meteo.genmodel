@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/MeteoKevina/src" modelPluginID="MeteoKevina" modelName="Meteo"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Packages.ecore</foreignModel>
+  <genPackages prefix="Packages" disposableProviderFactory="true" ecorePackage="Packages.ecore#/">
+    <nestedGenPackages prefix="Parametres" disposableProviderFactory="true" ecorePackage="Packages.ecore#//Parametres">
+      <genClasses ecoreClass="Packages.ecore#//Parametres/Parametres">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Parametres/Parametres/langue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Parametres/Parametres/unite"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="Packages.ecore#//Parametres/InterParam"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Vue" disposableProviderFactory="true" ecorePackage="Packages.ecore#//Vue">
+      <genClasses ecoreClass="Packages.ecore#//Vue/Carte">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Packages.ecore#//Vue/Carte/barbules"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Packages.ecore#//Vue/Carte/zoneSelection"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Packages.ecore#//Vue/Carte/zonePression"/>
+        <genOperations ecoreOperation="Packages.ecore#//Vue/Carte/dezoomer"/>
+        <genOperations ecoreOperation="Packages.ecore#//Vue/Carte/zoomer"/>
+      </genClasses>
+      <genClasses ecoreClass="Packages.ecore#//Vue/Barbule">
+        <genOperations ecoreOperation="Packages.ecore#//Vue/Barbule/createBarb">
+          <genParameters ecoreParameter="Packages.ecore#//Vue/Barbule/createBarb/temps"/>
+          <genParameters ecoreParameter="Packages.ecore#//Vue/Barbule/createBarb/pression"/>
+          <genParameters ecoreParameter="Packages.ecore#//Vue/Barbule/createBarb/vitesse"/>
+          <genParameters ecoreParameter="Packages.ecore#//Vue/Barbule/createBarb/direction"/>
+          <genParameters ecoreParameter="Packages.ecore#//Vue/Barbule/createBarb/latitude"/>
+          <genParameters ecoreParameter="Packages.ecore#//Vue/Barbule/createBarb/longitude"/>
+        </genOperations>
+        <genOperations ecoreOperation="Packages.ecore#//Vue/Barbule/afficherBarb">
+          <genParameters ecoreParameter="Packages.ecore#//Vue/Barbule/afficherBarb/donnee"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="Packages.ecore#//Vue/InterView"/>
+      <genClasses ecoreClass="Packages.ecore#//Vue/Fenetre">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Packages.ecore#//Vue/Fenetre/carte"/>
+      </genClasses>
+      <genClasses ecoreClass="Packages.ecore#//Vue/ZonePression"/>
+      <genClasses ecoreClass="Packages.ecore#//Vue/ZoneSelection"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Edition" disposableProviderFactory="true" ecorePackage="Packages.ecore#//Edition">
+      <genClasses ecoreClass="Packages.ecore#//Edition/EditDonnee">
+        <genOperations ecoreOperation="Packages.ecore#//Edition/EditDonnee/changeDirection">
+          <genParameters ecoreParameter="Packages.ecore#//Edition/EditDonnee/changeDirection/donnee"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/EditDonnee/changeDirection/dir"/>
+        </genOperations>
+        <genOperations ecoreOperation="Packages.ecore#//Edition/EditDonnee/changePression">
+          <genParameters ecoreParameter="Packages.ecore#//Edition/EditDonnee/changePression/donnee"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/EditDonnee/changePression/pression"/>
+        </genOperations>
+        <genOperations ecoreOperation="Packages.ecore#//Edition/EditDonnee/changeContraste">
+          <genParameters ecoreParameter="Packages.ecore#//Edition/EditDonnee/changeContraste/donnee"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/EditDonnee/changeContraste/contraste"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="Packages.ecore#//Edition/CreateDonnee">
+        <genOperations ecoreOperation="Packages.ecore#//Edition/CreateDonnee/create">
+          <genParameters ecoreParameter="Packages.ecore#//Edition/CreateDonnee/create/temps"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/CreateDonnee/create/pression"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/CreateDonnee/create/vitesse"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/CreateDonnee/create/direction"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/CreateDonnee/create/latitude"/>
+          <genParameters ecoreParameter="Packages.ecore#//Edition/CreateDonnee/create/longitude"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="Packages.ecore#//Edition/InterEdit"/>
+      <genClasses ecoreClass="Packages.ecore#//Edition/Edtion"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Calcul" disposableProviderFactory="true" ecorePackage="Packages.ecore#//Calcul">
+      <genClasses ecoreClass="Packages.ecore#//Calcul/Calcul">
+        <genOperations ecoreOperation="Packages.ecore#//Calcul/Calcul/interpoler">
+          <genParameters ecoreParameter="Packages.ecore#//Calcul/Calcul/interpoler/prev1"/>
+          <genParameters ecoreParameter="Packages.ecore#//Calcul/Calcul/interpoler/prev2"/>
+          <genParameters ecoreParameter="Packages.ecore#//Calcul/Calcul/interpoler/prev3"/>
+          <genParameters ecoreParameter="Packages.ecore#//Calcul/Calcul/interpoler/prev4"/>
+          <genParameters ecoreParameter="Packages.ecore#//Calcul/Calcul/interpoler/latitude"/>
+          <genParameters ecoreParameter="Packages.ecore#//Calcul/Calcul/interpoler/longitude"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="Packages.ecore#//Calcul/InterCalc"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Prevision" disposableProviderFactory="true" ecorePackage="Packages.ecore#//Prevision">
+      <genClasses ecoreClass="Packages.ecore#//Prevision/Donnee">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Packages.ecore#//Prevision/Donnee/coord"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Prevision/Donnee/temps"/>
+      </genClasses>
+      <genClasses ecoreClass="Packages.ecore#//Prevision/Vent">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Prevision/Vent/direction"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Prevision/Vent/vitesse_u"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Prevision/Vent/vitesse_v"/>
+      </genClasses>
+      <genClasses ecoreClass="Packages.ecore#//Prevision/Pressions">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Prevision/Pressions/value"/>
+      </genClasses>
+      <genClasses ecoreClass="Packages.ecore#//Prevision/Coordonnee">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Prevision/Coordonnee/lon"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Packages.ecore#//Prevision/Coordonnee/lat"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="Packages.ecore#//Prevision/InterPrev"/>
+      <genClasses ecoreClass="Packages.ecore#//Prevision/Prevision">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference Packages.ecore#//Prevision/Prevision/donnees"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="IO" disposableProviderFactory="true" ecorePackage="Packages.ecore#//IO">
+      <genClasses ecoreClass="Packages.ecore#//IO/FileReader">
+        <genOperations ecoreOperation="Packages.ecore#//IO/FileReader/parseFile">
+          <genParameters ecoreParameter="Packages.ecore#//IO/FileReader/parseFile/path_to_file"/>
+        </genOperations>
+        <genOperations ecoreOperation="Packages.ecore#//IO/FileReader/getDonnees"/>
+      </genClasses>
+      <genClasses ecoreClass="Packages.ecore#//IO/NetcdfWriter"/>
+      <genClasses image="false" ecoreClass="Packages.ecore#//IO/InterRead"/>
+      <genClasses image="false" ecoreClass="Packages.ecore#//IO/InterWrite"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

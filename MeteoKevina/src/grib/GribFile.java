@@ -25,7 +25,6 @@ public class GribFile {
 				list.add(new Vent(layer, c(42+i,-30+j), 30, 40));
 			}
 		}
-		
 		/*
 		list.add(new Vent(layer, c(0,0)    ,  10.0 , 0));
 		list.add(new Vent(layer, c(0,20)   ,  20.0 , 0));

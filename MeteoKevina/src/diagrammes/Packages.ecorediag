@@ -188,15 +188,15 @@
         </children>
         <children xmi:type="notation:Node" xmi:id="_U_vBFOt_EeWWoaF6_MQTPA" type="5005">
           <children xmi:type="notation:Node" xmi:id="_kRukcOt_EeWWoaF6_MQTPA" type="2002">
-            <element xmi:type="ecore:EOperation" href="Packages.ecore#//Edition/Edit%20Donnee/changePression"/>
+            <element xmi:type="ecore:EOperation" href="Packages.ecore#//Edition/EditDonnee/changePression"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_kRukcet_EeWWoaF6_MQTPA"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_-zlSgOt_EeWWoaF6_MQTPA" type="2002">
-            <element xmi:type="ecore:EOperation" href="Packages.ecore#//Edition/Edit%20Donnee/changeDirection"/>
+            <element xmi:type="ecore:EOperation" href="Packages.ecore#//Edition/EditDonnee/changeDirection"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_-zlSget_EeWWoaF6_MQTPA"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_iGs3UOt_EeWWoaF6_MQTPA" type="2002">
-            <element xmi:type="ecore:EOperation" href="Packages.ecore#//Edition/Edit%20Donnee/changeContraste"/>
+            <element xmi:type="ecore:EOperation" href="Packages.ecore#//Edition/EditDonnee/changeContraste"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_iGs3Uet_EeWWoaF6_MQTPA"/>
           </children>
           <styles xmi:type="notation:DrawerStyle" xmi:id="_U_vBFet_EeWWoaF6_MQTPA"/>
@@ -204,7 +204,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_U_vBF-t_EeWWoaF6_MQTPA"/>
         </children>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_U_uaAet_EeWWoaF6_MQTPA" fontColor="4210752" fontName="Segoe UI" fontHeight="14" fillColor="13761016" lineColor="8421504"/>
-        <element xmi:type="ecore:EClass" href="Packages.ecore#//Edition/Edit%20Donnee"/>
+        <element xmi:type="ecore:EClass" href="Packages.ecore#//Edition/EditDonnee"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_uaAut_EeWWoaF6_MQTPA" x="10" y="149" width="228" height="152"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_TK2M8OuIEeWWoaF6_MQTPA" type="2003">
@@ -282,10 +282,6 @@
           <children xmi:type="notation:Node" xmi:id="_U3dVMOuHEeWWoaF6_MQTPA" type="2002">
             <element xmi:type="ecore:EOperation" href="Packages.ecore#//Calcul/Calcul/interpoler"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_U3dVMeuHEeWWoaF6_MQTPA"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_TQ6AIOwhEeWPGcPaQi71Hg" type="2002">
-            <element xmi:type="ecore:EOperation" href="Packages.ecore#//Calcul/Calcul/moyDonnee"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_TQ6AIewhEeWPGcPaQi71Hg"/>
           </children>
           <styles xmi:type="notation:DrawerStyle" xmi:id="_Ttn_UeuHEeWWoaF6_MQTPA"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_Ttn_UuuHEeWWoaF6_MQTPA"/>
