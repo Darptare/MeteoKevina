@@ -46,4 +46,12 @@ public interface Fenetre extends InterView {
 	 */
 	void setCarte(Carte value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void start();
+
 } // Fenetre

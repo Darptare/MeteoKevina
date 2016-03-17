@@ -58,7 +58,6 @@ public class PrevisionFactoryImpl extends EFactoryImpl implements PrevisionFacto
 		switch (eClass.getClassifierID()) {
 			case PrevisionPackage.DONNEE: return createDonnee();
 			case PrevisionPackage.VENT: return createVent();
-			case PrevisionPackage.PRESSIONS: return createPressions();
 			case PrevisionPackage.COORDONNEE: return createCoordonnee();
 			case PrevisionPackage.PREVISION: return createPrevision();
 			default:
@@ -84,16 +83,6 @@ public class PrevisionFactoryImpl extends EFactoryImpl implements PrevisionFacto
 	public Vent createVent() {
 		VentImpl vent = new VentImpl();
 		return vent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Pressions createPressions() {
-		PressionsImpl pressions = new PressionsImpl();
-		return pressions;
 	}
 
 	/**

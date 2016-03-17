@@ -67,22 +67,22 @@ public interface PrevisionPackage extends EPackage {
 	int DONNEE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Coord</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DONNEE__COORD = 0;
-
-	/**
 	 * The feature id for the '<em><b>Temps</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DONNEE__TEMPS = 1;
+	int DONNEE__TEMPS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Vent</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DONNEE__VENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Donnee</em>' class.
@@ -113,31 +113,22 @@ public interface PrevisionPackage extends EPackage {
 	int VENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Coord</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENT__COORD = DONNEE__COORD;
-
-	/**
-	 * The feature id for the '<em><b>Temps</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENT__TEMPS = DONNEE__TEMPS;
-
-	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VENT__DIRECTION = DONNEE_FEATURE_COUNT + 0;
+	int VENT__DIRECTION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Vitesse nd</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENT__VITESSE_ND = 1;
 
 	/**
 	 * The feature id for the '<em><b>Vitesse u</b></em>' attribute.
@@ -146,7 +137,7 @@ public interface PrevisionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VENT__VITESSE_U = DONNEE_FEATURE_COUNT + 1;
+	int VENT__VITESSE_U = 2;
 
 	/**
 	 * The feature id for the '<em><b>Vitesse v</b></em>' attribute.
@@ -155,53 +146,7 @@ public interface PrevisionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VENT__VITESSE_V = DONNEE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Vent</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENT_FEATURE_COUNT = DONNEE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Vent</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VENT_OPERATION_COUNT = DONNEE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link packages.Prevision.impl.PressionsImpl <em>Pressions</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see packages.Prevision.impl.PressionsImpl
-	 * @see packages.Prevision.impl.PrevisionPackageImpl#getPressions()
-	 * @generated
-	 */
-	int PRESSIONS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Coord</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRESSIONS__COORD = DONNEE__COORD;
-
-	/**
-	 * The feature id for the '<em><b>Temps</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRESSIONS__TEMPS = DONNEE__TEMPS;
+	int VENT__VITESSE_V = 3;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -210,25 +155,34 @@ public interface PrevisionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRESSIONS__VALUE = DONNEE_FEATURE_COUNT + 0;
+	int VENT__VALUE = 4;
 
 	/**
-	 * The number of structural features of the '<em>Pressions</em>' class.
+	 * The feature id for the '<em><b>Coord</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRESSIONS_FEATURE_COUNT = DONNEE_FEATURE_COUNT + 1;
+	int VENT__COORD = 5;
 
 	/**
-	 * The number of operations of the '<em>Pressions</em>' class.
+	 * The number of structural features of the '<em>Vent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRESSIONS_OPERATION_COUNT = DONNEE_OPERATION_COUNT + 0;
+	int VENT_FEATURE_COUNT = 6;
+
+	/**
+	 * The number of operations of the '<em>Vent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link packages.Prevision.impl.CoordonneeImpl <em>Coordonnee</em>}' class.
@@ -238,7 +192,7 @@ public interface PrevisionPackage extends EPackage {
 	 * @see packages.Prevision.impl.PrevisionPackageImpl#getCoordonnee()
 	 * @generated
 	 */
-	int COORDONNEE = 3;
+	int COORDONNEE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Lon</b></em>' attribute.
@@ -284,7 +238,7 @@ public interface PrevisionPackage extends EPackage {
 	 * @see packages.Prevision.impl.PrevisionPackageImpl#getInterPrev()
 	 * @generated
 	 */
-	int INTER_PREV = 4;
+	int INTER_PREV = 3;
 
 	/**
 	 * The number of structural features of the '<em>Inter Prev</em>' class.
@@ -312,7 +266,7 @@ public interface PrevisionPackage extends EPackage {
 	 * @see packages.Prevision.impl.PrevisionPackageImpl#getPrevision()
 	 * @generated
 	 */
-	int PREVISION = 5;
+	int PREVISION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Donnees</b></em>' reference list.
@@ -353,17 +307,6 @@ public interface PrevisionPackage extends EPackage {
 	EClass getDonnee();
 
 	/**
-	 * Returns the meta object for the reference '{@link packages.Prevision.Donnee#getCoord <em>Coord</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Coord</em>'.
-	 * @see packages.Prevision.Donnee#getCoord()
-	 * @see #getDonnee()
-	 * @generated
-	 */
-	EReference getDonnee_Coord();
-
-	/**
 	 * Returns the meta object for the attribute '{@link packages.Prevision.Donnee#getTemps <em>Temps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -373,6 +316,17 @@ public interface PrevisionPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDonnee_Temps();
+
+	/**
+	 * Returns the meta object for the reference list '{@link packages.Prevision.Donnee#getVent <em>Vent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Vent</em>'.
+	 * @see packages.Prevision.Donnee#getVent()
+	 * @see #getDonnee()
+	 * @generated
+	 */
+	EReference getDonnee_Vent();
 
 	/**
 	 * Returns the meta object for class '{@link packages.Prevision.Vent <em>Vent</em>}'.
@@ -394,6 +348,17 @@ public interface PrevisionPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVent_Direction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link packages.Prevision.Vent#getVitesse_nd <em>Vitesse nd</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Vitesse nd</em>'.
+	 * @see packages.Prevision.Vent#getVitesse_nd()
+	 * @see #getVent()
+	 * @generated
+	 */
+	EAttribute getVent_Vitesse_nd();
 
 	/**
 	 * Returns the meta object for the attribute '{@link packages.Prevision.Vent#getVitesse_u <em>Vitesse u</em>}'.
@@ -418,25 +383,26 @@ public interface PrevisionPackage extends EPackage {
 	EAttribute getVent_Vitesse_v();
 
 	/**
-	 * Returns the meta object for class '{@link packages.Prevision.Pressions <em>Pressions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Pressions</em>'.
-	 * @see packages.Prevision.Pressions
-	 * @generated
-	 */
-	EClass getPressions();
-
-	/**
-	 * Returns the meta object for the attribute '{@link packages.Prevision.Pressions#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link packages.Prevision.Vent#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see packages.Prevision.Pressions#getValue()
-	 * @see #getPressions()
+	 * @see packages.Prevision.Vent#getValue()
+	 * @see #getVent()
 	 * @generated
 	 */
-	EAttribute getPressions_Value();
+	EAttribute getVent_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link packages.Prevision.Vent#getCoord <em>Coord</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Coord</em>'.
+	 * @see packages.Prevision.Vent#getCoord()
+	 * @see #getVent()
+	 * @generated
+	 */
+	EReference getVent_Coord();
 
 	/**
 	 * Returns the meta object for class '{@link packages.Prevision.Coordonnee <em>Coordonnee</em>}'.
@@ -535,20 +501,20 @@ public interface PrevisionPackage extends EPackage {
 		EClass DONNEE = eINSTANCE.getDonnee();
 
 		/**
-		 * The meta object literal for the '<em><b>Coord</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DONNEE__COORD = eINSTANCE.getDonnee_Coord();
-
-		/**
 		 * The meta object literal for the '<em><b>Temps</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute DONNEE__TEMPS = eINSTANCE.getDonnee_Temps();
+
+		/**
+		 * The meta object literal for the '<em><b>Vent</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DONNEE__VENT = eINSTANCE.getDonnee_Vent();
 
 		/**
 		 * The meta object literal for the '{@link packages.Prevision.impl.VentImpl <em>Vent</em>}' class.
@@ -569,6 +535,14 @@ public interface PrevisionPackage extends EPackage {
 		EAttribute VENT__DIRECTION = eINSTANCE.getVent_Direction();
 
 		/**
+		 * The meta object literal for the '<em><b>Vitesse nd</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VENT__VITESSE_ND = eINSTANCE.getVent_Vitesse_nd();
+
+		/**
 		 * The meta object literal for the '<em><b>Vitesse u</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -585,22 +559,20 @@ public interface PrevisionPackage extends EPackage {
 		EAttribute VENT__VITESSE_V = eINSTANCE.getVent_Vitesse_v();
 
 		/**
-		 * The meta object literal for the '{@link packages.Prevision.impl.PressionsImpl <em>Pressions</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see packages.Prevision.impl.PressionsImpl
-		 * @see packages.Prevision.impl.PrevisionPackageImpl#getPressions()
-		 * @generated
-		 */
-		EClass PRESSIONS = eINSTANCE.getPressions();
-
-		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PRESSIONS__VALUE = eINSTANCE.getPressions_Value();
+		EAttribute VENT__VALUE = eINSTANCE.getVent_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Coord</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VENT__COORD = eINSTANCE.getVent_Coord();
 
 		/**
 		 * The meta object literal for the '{@link packages.Prevision.impl.CoordonneeImpl <em>Coordonnee</em>}' class.

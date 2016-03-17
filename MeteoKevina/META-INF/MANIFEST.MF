@@ -26,5 +26,6 @@ Export-Package: packages.Calcul,
  packages.Vue.impl,
  packages.Vue.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.junit
 Bundle-ActivationPolicy: lazy

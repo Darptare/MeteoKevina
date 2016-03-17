@@ -278,6 +278,15 @@ public class VuePackageImpl extends EPackageImpl implements VuePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getFenetre__Start() {
+		return fenetreEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getZonePression() {
 		return zonePressionEClass;
 	}
@@ -334,6 +343,7 @@ public class VuePackageImpl extends EPackageImpl implements VuePackage {
 
 		fenetreEClass = createEClass(FENETRE);
 		createEReference(fenetreEClass, FENETRE__CARTE);
+		createEOperation(fenetreEClass, FENETRE___START);
 
 		zonePressionEClass = createEClass(ZONE_PRESSION);
 
@@ -400,6 +410,8 @@ public class VuePackageImpl extends EPackageImpl implements VuePackage {
 
 		initEClass(fenetreEClass, Fenetre.class, "Fenetre", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFenetre_Carte(), this.getCarte(), null, "carte", null, 1, 1, Fenetre.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getFenetre__Start(), null, "start", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(zonePressionEClass, ZonePression.class, "ZonePression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

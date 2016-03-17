@@ -232,13 +232,22 @@ public interface VuePackage extends EPackage {
 	int FENETRE_FEATURE_COUNT = INTER_VIEW_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Start</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FENETRE___START = INTER_VIEW_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Fenetre</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FENETRE_OPERATION_COUNT = INTER_VIEW_OPERATION_COUNT + 0;
+	int FENETRE_OPERATION_COUNT = INTER_VIEW_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link packages.Vue.impl.ZonePressionImpl <em>Zone Pression</em>}' class.
@@ -422,6 +431,16 @@ public interface VuePackage extends EPackage {
 	EReference getFenetre_Carte();
 
 	/**
+	 * Returns the meta object for the '{@link packages.Vue.Fenetre#start() <em>Start</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see packages.Vue.Fenetre#start()
+	 * @generated
+	 */
+	EOperation getFenetre__Start();
+
+	/**
 	 * Returns the meta object for class '{@link packages.Vue.ZonePression <em>Zone Pression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -567,6 +586,14 @@ public interface VuePackage extends EPackage {
 		 * @generated
 		 */
 		EReference FENETRE__CARTE = eINSTANCE.getFenetre_Carte();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FENETRE___START = eINSTANCE.getFenetre__Start();
 
 		/**
 		 * The meta object literal for the '{@link packages.Vue.impl.ZonePressionImpl <em>Zone Pression</em>}' class.

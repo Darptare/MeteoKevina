@@ -32,7 +32,7 @@ public interface Prevision extends InterPrev {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Donnees</em>' reference list.
 	 * @see packages.Prevision.PrevisionPackage#getPrevision_Donnees()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Donnee> getDonnees();

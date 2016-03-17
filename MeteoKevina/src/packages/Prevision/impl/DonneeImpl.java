@@ -2,17 +2,16 @@
  */
 package packages.Prevision.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import packages.Prevision.Coordonnee;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import packages.Prevision.Donnee;
 import packages.Prevision.PrevisionPackage;
+import packages.Prevision.Vent;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,24 +20,14 @@ import packages.Prevision.PrevisionPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link packages.Prevision.impl.DonneeImpl#getCoord <em>Coord</em>}</li>
  *   <li>{@link packages.Prevision.impl.DonneeImpl#getTemps <em>Temps</em>}</li>
+ *   <li>{@link packages.Prevision.impl.DonneeImpl#getVent <em>Vent</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class DonneeImpl extends MinimalEObjectImpl.Container implements Donnee {
-	/**
-	 * The cached value of the '{@link #getCoord() <em>Coord</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCoord()
-	 * @generated
-	 * @ordered
-	 */
-	protected Coordonnee coord;
-
 	/**
 	 * The default value of the '{@link #getTemps() <em>Temps</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,6 +49,16 @@ public class DonneeImpl extends MinimalEObjectImpl.Container implements Donnee {
 	protected double temps = TEMPS_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getVent() <em>Vent</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVent()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Vent> vent;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -76,44 +75,6 @@ public class DonneeImpl extends MinimalEObjectImpl.Container implements Donnee {
 	@Override
 	protected EClass eStaticClass() {
 		return PrevisionPackage.Literals.DONNEE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Coordonnee getCoord() {
-		if (coord != null && coord.eIsProxy()) {
-			InternalEObject oldCoord = (InternalEObject)coord;
-			coord = (Coordonnee)eResolveProxy(oldCoord);
-			if (coord != oldCoord) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PrevisionPackage.DONNEE__COORD, oldCoord, coord));
-			}
-		}
-		return coord;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Coordonnee basicGetCoord() {
-		return coord;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCoord(Coordonnee newCoord) {
-		Coordonnee oldCoord = coord;
-		coord = newCoord;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PrevisionPackage.DONNEE__COORD, oldCoord, coord));
 	}
 
 	/**
@@ -142,14 +103,25 @@ public class DonneeImpl extends MinimalEObjectImpl.Container implements Donnee {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Vent> getVent() {
+		if (vent == null) {
+			vent = new EObjectResolvingEList<Vent>(Vent.class, this, PrevisionPackage.DONNEE__VENT);
+		}
+		return vent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PrevisionPackage.DONNEE__COORD:
-				if (resolve) return getCoord();
-				return basicGetCoord();
 			case PrevisionPackage.DONNEE__TEMPS:
 				return getTemps();
+			case PrevisionPackage.DONNEE__VENT:
+				return getVent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,14 +131,16 @@ public class DonneeImpl extends MinimalEObjectImpl.Container implements Donnee {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PrevisionPackage.DONNEE__COORD:
-				setCoord((Coordonnee)newValue);
-				return;
 			case PrevisionPackage.DONNEE__TEMPS:
 				setTemps((Double)newValue);
+				return;
+			case PrevisionPackage.DONNEE__VENT:
+				getVent().clear();
+				getVent().addAll((Collection<? extends Vent>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,11 +154,11 @@ public class DonneeImpl extends MinimalEObjectImpl.Container implements Donnee {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PrevisionPackage.DONNEE__COORD:
-				setCoord((Coordonnee)null);
-				return;
 			case PrevisionPackage.DONNEE__TEMPS:
 				setTemps(TEMPS_EDEFAULT);
+				return;
+			case PrevisionPackage.DONNEE__VENT:
+				getVent().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,10 +172,10 @@ public class DonneeImpl extends MinimalEObjectImpl.Container implements Donnee {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PrevisionPackage.DONNEE__COORD:
-				return coord != null;
 			case PrevisionPackage.DONNEE__TEMPS:
 				return temps != TEMPS_EDEFAULT;
+			case PrevisionPackage.DONNEE__VENT:
+				return vent != null && !vent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

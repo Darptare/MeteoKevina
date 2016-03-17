@@ -6,36 +6,23 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import packages.Calcul.CalculPackage;
-
 import packages.Calcul.impl.CalculPackageImpl;
-
 import packages.Edition.EditionPackage;
-
 import packages.Edition.impl.EditionPackageImpl;
-
 import packages.IO.IOPackage;
-
 import packages.IO.impl.IOPackageImpl;
-
 import packages.Parametres.ParametresPackage;
-
 import packages.Parametres.impl.ParametresPackageImpl;
-
 import packages.Prevision.Coordonnee;
 import packages.Prevision.Donnee;
 import packages.Prevision.InterPrev;
-import packages.Prevision.Pressions;
 import packages.Prevision.Prevision;
 import packages.Prevision.PrevisionFactory;
 import packages.Prevision.PrevisionPackage;
 import packages.Prevision.Vent;
-
 import packages.Vue.VuePackage;
-
 import packages.Vue.impl.VuePackageImpl;
 
 /**
@@ -58,13 +45,6 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 	 * @generated
 	 */
 	private EClass ventEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass pressionsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,8 +159,8 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDonnee_Coord() {
-		return (EReference)donneeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getDonnee_Temps() {
+		return (EAttribute)donneeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -188,8 +168,8 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDonnee_Temps() {
-		return (EAttribute)donneeEClass.getEStructuralFeatures().get(1);
+	public EReference getDonnee_Vent() {
+		return (EReference)donneeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -215,7 +195,7 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVent_Vitesse_u() {
+	public EAttribute getVent_Vitesse_nd() {
 		return (EAttribute)ventEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -224,7 +204,7 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVent_Vitesse_v() {
+	public EAttribute getVent_Vitesse_u() {
 		return (EAttribute)ventEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -233,8 +213,8 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPressions() {
-		return pressionsEClass;
+	public EAttribute getVent_Vitesse_v() {
+		return (EAttribute)ventEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -242,8 +222,17 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPressions_Value() {
-		return (EAttribute)pressionsEClass.getEStructuralFeatures().get(0);
+	public EAttribute getVent_Value() {
+		return (EAttribute)ventEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVent_Coord() {
+		return (EReference)ventEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -329,16 +318,16 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 
 		// Create classes and their features
 		donneeEClass = createEClass(DONNEE);
-		createEReference(donneeEClass, DONNEE__COORD);
 		createEAttribute(donneeEClass, DONNEE__TEMPS);
+		createEReference(donneeEClass, DONNEE__VENT);
 
 		ventEClass = createEClass(VENT);
 		createEAttribute(ventEClass, VENT__DIRECTION);
+		createEAttribute(ventEClass, VENT__VITESSE_ND);
 		createEAttribute(ventEClass, VENT__VITESSE_U);
 		createEAttribute(ventEClass, VENT__VITESSE_V);
-
-		pressionsEClass = createEClass(PRESSIONS);
-		createEAttribute(pressionsEClass, PRESSIONS__VALUE);
+		createEAttribute(ventEClass, VENT__VALUE);
+		createEReference(ventEClass, VENT__COORD);
 
 		coordonneeEClass = createEClass(COORDONNEE);
 		createEAttribute(coordonneeEClass, COORDONNEE__LON);
@@ -378,22 +367,20 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		ventEClass.getESuperTypes().add(this.getDonnee());
-		pressionsEClass.getESuperTypes().add(this.getDonnee());
 		previsionEClass.getESuperTypes().add(this.getInterPrev());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(donneeEClass, Donnee.class, "Donnee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDonnee_Coord(), this.getCoordonnee(), null, "coord", null, 1, 1, Donnee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDonnee_Temps(), ecorePackage.getEDouble(), "temps", null, 1, 1, Donnee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDonnee_Vent(), this.getVent(), null, "vent", null, 0, -1, Donnee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ventEClass, Vent.class, "Vent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVent_Direction(), ecorePackage.getEDouble(), "direction", null, 1, 1, Vent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVent_Vitesse_nd(), ecorePackage.getEDouble(), "vitesse_nd", null, 1, 1, Vent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVent_Vitesse_u(), ecorePackage.getEDouble(), "vitesse_u", null, 1, 1, Vent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVent_Vitesse_v(), ecorePackage.getEDouble(), "vitesse_v", null, 1, 1, Vent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(pressionsEClass, Pressions.class, "Pressions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPressions_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, Pressions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVent_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, Vent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVent_Coord(), this.getCoordonnee(), null, "coord", null, 1, 1, Vent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordonneeEClass, Coordonnee.class, "Coordonnee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCoordonnee_Lon(), ecorePackage.getEDouble(), "lon", null, 1, 1, Coordonnee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -402,7 +389,7 @@ public class PrevisionPackageImpl extends EPackageImpl implements PrevisionPacka
 		initEClass(interPrevEClass, InterPrev.class, "InterPrev", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(previsionEClass, Prevision.class, "Prevision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrevision_Donnees(), this.getDonnee(), null, "donnees", null, 1, -1, Prevision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPrevision_Donnees(), this.getDonnee(), null, "donnees", null, 0, -1, Prevision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -40,15 +40,6 @@ public interface PrevisionFactory extends EFactory {
 	Vent createVent();
 
 	/**
-	 * Returns a new object of class '<em>Pressions</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Pressions</em>'.
-	 * @generated
-	 */
-	Pressions createPressions();
-
-	/**
 	 * Returns a new object of class '<em>Coordonnee</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

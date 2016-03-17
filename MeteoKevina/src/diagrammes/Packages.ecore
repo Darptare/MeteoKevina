@@ -33,6 +33,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InterView" abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="Fenetre" eSuperTypes="#//Vue/InterView">
+      <eOperations name="start" lowerBound="1"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="carte" lowerBound="1"
           eType="#//Vue/Carte"/>
     </eClassifiers>
@@ -82,22 +83,24 @@
   </eSubpackages>
   <eSubpackages name="Prevision" nsURI="http://packages/prevision" nsPrefix="prevision">
     <eClassifiers xsi:type="ecore:EClass" name="Donnee">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coord" lowerBound="1"
-          eType="#//Prevision/Coordonnee"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="vent" upperBound="-1"
+          eType="#//Prevision/Vent"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Vent" eSuperTypes="#//Prevision/Donnee">
+    <eClassifiers xsi:type="ecore:EClass" name="Vent">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_nd" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_u" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_v" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pressions" eSuperTypes="#//Prevision/Donnee">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coord" lowerBound="1"
+          eType="#//Prevision/Coordonnee"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Coordonnee">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lon" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
@@ -105,8 +108,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InterPrev" abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="Prevision" eSuperTypes="#//Prevision/InterPrev">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" lowerBound="1"
-          upperBound="-1" eType="#//Prevision/Donnee"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" upperBound="-1"
+          eType="#//Prevision/Donnee"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="IO" nsURI="http://packages/io" nsPrefix="io">

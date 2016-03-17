@@ -76,10 +76,6 @@ public class PrevisionAdapterFactory extends AdapterFactoryImpl {
 				return createVentAdapter();
 			}
 			@Override
-			public Adapter casePressions(Pressions object) {
-				return createPressionsAdapter();
-			}
-			@Override
 			public Adapter caseCoordonnee(Coordonnee object) {
 				return createCoordonneeAdapter();
 			}
@@ -136,20 +132,6 @@ public class PrevisionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link packages.Prevision.Pressions <em>Pressions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see packages.Prevision.Pressions
-	 * @generated
-	 */
-	public Adapter createPressionsAdapter() {
 		return null;
 	}
 

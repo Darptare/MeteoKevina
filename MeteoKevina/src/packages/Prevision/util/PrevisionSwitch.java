@@ -75,14 +75,6 @@ public class PrevisionSwitch<T> extends Switch<T> {
 			case PrevisionPackage.VENT: {
 				Vent vent = (Vent)theEObject;
 				T result = caseVent(vent);
-				if (result == null) result = caseDonnee(vent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PrevisionPackage.PRESSIONS: {
-				Pressions pressions = (Pressions)theEObject;
-				T result = casePressions(pressions);
-				if (result == null) result = caseDonnee(pressions);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -136,21 +128,6 @@ public class PrevisionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVent(Vent object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Pressions</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Pressions</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePressions(Pressions object) {
 		return null;
 	}
 
