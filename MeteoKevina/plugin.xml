@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated meteo -->
+      <package
+            uri="http://packages/parametres"
+            class="packages.Parametres.ParametresPackage"
+            genModel="src/diagrammes/meteo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated meteo -->
+      <package
+            uri="http://packages/vue"
+            class="packages.Vue.VuePackage"
+            genModel="src/diagrammes/meteo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated meteo -->
+      <package
+            uri="http://packages/edition"
+            class="packages.Edition.EditionPackage"
+            genModel="src/diagrammes/meteo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated meteo -->
+      <package
+            uri="http://packages/calcul"
+            class="packages.Calcul.CalculPackage"
+            genModel="src/diagrammes/meteo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated meteo -->
+      <package
+            uri="http://packages/prevision"
+            class="packages.Prevision.PrevisionPackage"
+            genModel="src/diagrammes/meteo.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated meteo -->
+      <package
+            uri="http://packages/io"
+            class="packages.IO.IOPackage"
+            genModel="src/diagrammes/meteo.genmodel"/>
+   </extension>
+
+</plugin>

@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="C:/Users/jérôme/Desktop/JMapViewer-1.15/JMapViewer_src.jar"/>
 	<classpathentry kind="lib" path="H:/Documents/Semestre8/ProjetIDL_Meteo/JMapViewer.jar"/>
 	<classpathentry kind="lib" path="H:/Documents/Semestre8/ProjetIDL_Meteo/JMapViewer_src.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
