@@ -2,10 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/jérôme/Desktop/JMapViewer-1.15/JMapViewer.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jérôme/Desktop/JMapViewer-1.15/JMapViewer_src.jar"/>
-	<classpathentry kind="lib" path="H:/Documents/Semestre8/ProjetIDL_Meteo/JMapViewer.jar"/>
-	<classpathentry kind="lib" path="H:/Documents/Semestre8/ProjetIDL_Meteo/JMapViewer_src.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="C:/Users/Kajine/Downloads/JMapViewer.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kajine/Downloads/JMapViewer_src.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kajine/Downloads/netcdfAll-4.6.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
