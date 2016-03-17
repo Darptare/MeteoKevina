@@ -2,142 +2,125 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="packages" nsURI="http://packages/1.0" nsPrefix="packages">
   <eSubpackages name="Parametres">
-    <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Parametres">
+    <eClassifiers xsi:type="ecore:EClass" name="Parametres" eSuperTypes="#//Parametres/InterParam">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="langue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="unite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Parametres/InterParam"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InterParam" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Vue/InterView"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InterParam" abstract="true" interface="true"/>
   </eSubpackages>
   <eSubpackages name="Vue">
-    <eClassifiers xsi:type="ecore:EClass" name="Carte" eSuperTypes="#//Vue/InterView">
-      <eOperations name="dezoomer"/>
-      <eOperations name="zoomer"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Vue/InterView"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="" eType="#//Prevision/Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Prevision/InterPrev"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Carte">
+      <eOperations name="dezoomer" lowerBound="1"/>
+      <eOperations name="zoomer" lowerBound="1"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="barbules" upperBound="-1"
+          eType="#//Vue/Barbule"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="zoneSelection" eType="#//Vue/ZoneSelection"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="zonePression" upperBound="-1"
+          eType="#//Vue/ZonePression"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Barbule" eSuperTypes="#//Vue/InterView">
-      <eOperations name="createBarb"/>
-      <eOperations name="afficherBarb"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="tabBarb" eType="#//Vue/Carte"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="" eType="#//Edition/Edit%20Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Vue/InterView"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Barbule">
+      <eOperations name="createBarb" lowerBound="1">
+        <eParameters name="temps" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="pression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="vitesse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eOperations>
+      <eOperations name="afficherBarb" lowerBound="1">
+        <eParameters name="donnee" eType="#//Prevision/Vent"/>
+      </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InterView" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Prevision/InterPrev"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InterView" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Fenetre" eSuperTypes="#//Vue/InterView">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="carte" lowerBound="1"
+          eType="#//Vue/Carte"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Listener">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//IO/InterWrite"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ZonePression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ZoneSelection"/>
   </eSubpackages>
   <eSubpackages name="Edition">
-    <eClassifiers xsi:type="ecore:EClass" name="Edit Donnee" eSuperTypes="#//Edition/InterEdit #//Edition/Edtion">
-      <eOperations name="changeDirection">
-        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Edit Donnee" eSuperTypes="#//Edition/Edtion">
+      <eOperations name="changeDirection" lowerBound="1">
+        <eParameters name="donnee" eType="#//Prevision/Donnee"/>
+        <eParameters name="dir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eOperations>
-      <eOperations name="changePression">
-        <eParameters name="value " eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="changePression" lowerBound="1">
+        <eParameters name="donnee" eType="#//Prevision/Donnee"/>
+        <eParameters name="pression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eOperations>
-      <eOperations name="changeContraste">
-        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="changeContraste" lowerBound="1">
+        <eParameters name="donnee" eType="#//Prevision/Donnee"/>
+        <eParameters name="contraste" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tauxConstraste"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//Prevision/Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//Prevision/InterPrev"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CreateDonnée"/>
     <eClassifiers xsi:type="ecore:EClass" name="CreateDonnee" eSuperTypes="#//Edition/Edtion">
-      <eOperations name="create">
-        <eParameters name="temps" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="pression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="vitesse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-        <eParameters name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eOperations name="create" lowerBound="1" eType="#//Prevision/Donnee">
+        <eParameters name="temps" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="pression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="vitesse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//IO/FileReader"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="data_to_save" eType="#//IO/NetcdfWriter"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Prevision/Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//IO/FileReader"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//Edition/Edit%20Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference6" eType="#//IO/InterRead"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InterEdit" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//IO/InterRead"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Prevision/InterPrev"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//Edition/Edit%20Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//Edition/CreateDonnee"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Edtion" eSuperTypes="#//Edition/InterEdit">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//Prevision/InterPrev"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference5" eType="#//Calcul/InterCalc"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InterEdit" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Edtion" eSuperTypes="#//Edition/InterEdit"/>
   </eSubpackages>
   <eSubpackages name="Calcul" nsURI="" nsPrefix="">
-    <eClassifiers xsi:type="ecore:EClass" name="Interpolation">
-      <eOperations name="interpoler"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Calcul" eSuperTypes="#//Calcul/InterCalc">
+      <eOperations name="interpoler" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eParameters name="prev1" eType="#//Prevision/Donnee"/>
+        <eParameters name="prev2" eType="#//Prevision/Donnee"/>
+        <eParameters name="prev3" eType="#//Prevision/Donnee"/>
+        <eParameters name="prev4" eType="#//Prevision/Donnee"/>
+        <eParameters name="latitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        <eParameters name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eOperations>
+      <eOperations name="moyDonnee" lowerBound="1" eType="#//Prevision/Donnee">
+        <eParameters name="listDonnee" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+      </eOperations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InterCalc" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Prevision/InterPrev"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Calcul/Interpolation"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InterCalc" abstract="true" interface="true"/>
   </eSubpackages>
   <eSubpackages name="Prevision">
-    <eClassifiers xsi:type="ecore:EClass" name="Donnee" eSuperTypes="#//Prevision/InterPrev">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" eType="#//Edition/Edit%20Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//Vue/Barbule"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//IO/FileReader"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="wind" eType="#//Prevision/Vent"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Prevision/temps"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Prevision/Coordonnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//Prevision/pressions"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//Prevision/Coordonnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference4" eType="#//Prevision/temps"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Donnee">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coord" lowerBound="1"
+          eType="#//Prevision/Coordonnee"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Vent" eSuperTypes="#//Prevision/Donnee">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="wind" eType="#//Prevision/Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_u"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_v"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_u" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_v" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="pressions" eSuperTypes="#//Prevision/Donnee">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="temps">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Pressions" eSuperTypes="#//Prevision/Donnee">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Coordonnee">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lon" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lat" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InterPrev" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Prevision/Donnee"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InterPrev" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Prevision" eSuperTypes="#//Prevision/InterPrev">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" lowerBound="1"
+          upperBound="-1" eType="#//Prevision/Donnee"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="IO">
     <eClassifiers xsi:type="ecore:EClass" name="FileReader" eSuperTypes="#//IO/InterRead">
-      <eOperations name="parseFile">
+      <eOperations name="parseFile" lowerBound="1">
         <eParameters name="path_to_file" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eOperations>
-      <eOperations name="getDonnees" eType="#//Prevision/Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//Prevision/Donnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="donnees_lues" eType="#//Edition/CreateDonnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Prevision/Coordonnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Prevision/temps"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//Prevision/Vent"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference3" eType="#//Prevision/pressions"/>
+      <eOperations name="getDonnees" lowerBound="1" eType="#//Prevision/Donnee"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NetcdfWriter" eSuperTypes="#//IO/InterWrite">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Edition/CreateDonnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//Edition/CreateDonnee"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference2" eType="#//Prevision/InterPrev"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InterRead" abstract="true" interface="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//IO/FileReader"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference1" eType="#//IO/NetcdfWriter"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NetcdfWriter" eSuperTypes="#//IO/InterWrite"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InterRead" abstract="true" interface="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="InterWrite" abstract="true" interface="true"/>
   </eSubpackages>
 </ecore:EPackage>
