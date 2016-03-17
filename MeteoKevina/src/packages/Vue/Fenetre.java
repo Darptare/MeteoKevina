@@ -2,6 +2,10 @@
  */
 package packages.Vue;
 
+import java.util.ArrayList;
+
+import packages.Prevision.Vent;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -53,5 +57,13 @@ public interface Fenetre extends InterView {
 	 * @generated
 	 */
 	void start();
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void start(ArrayList<Vent> list);
 
 } // Fenetre

@@ -47,7 +47,7 @@ import org.openstreetmap.gui.jmapviewer.tilesources.MapQuestOpenAerialTileSource
 import org.openstreetmap.gui.jmapviewer.tilesources.MapQuestOsmTileSource;
 import org.openstreetmap.gui.jmapviewer.tilesources.OsmTileSource;
 
-import donnee.Vent;
+import packages.Prevision.Vent;
 
 /**
  * Demonstrates the usage of {@link JMapViewer}
@@ -70,7 +70,7 @@ public class Demo extends JFrame implements JMapViewerEventListener  {
     /**
      * Constructs the {@code Demo}.
      */
-    public Demo() {
+    public Demo(ArrayList<Vent> list) {
         super("JMapViewer Demo");
         setSize(400, 400);
 
@@ -262,10 +262,14 @@ public class Demo extends JFrame implements JMapViewerEventListener  {
 //        map().addMapPolygon(vent8.getPoly());
 //        map().addMapPolygon(vent9.getPoly());
         
-        GribFile gribFile = new GribFile();
-        ArrayList<Vent> listVent = gribFile.getVent(test);
-        for (Vent vent : listVent) {
-        	map().addMapPolygon(vent.getPoly());
+        //GribFile gribFile = new GribFile();
+        //ArrayList<Vent> listVent = gribFile.getVent(test);
+        
+        
+        for (Vent vent : list) {
+        	
+        	
+        	map().addMapPolygon(getPoly(vent, test));
 		}
         
         
@@ -295,7 +299,108 @@ public class Demo extends JFrame implements JMapViewerEventListener  {
         });
     }
 
-    private JMapViewer map() {
+    private MapPolygon getPoly(Vent vent, Layer layer) {
+    	MapPolygonImpl fleche = new MapPolygonImpl(getpoint(vent));
+		fleche.setBackColor(new Color(0.0f, 0.0f, 0.0f, 1.0f));
+		fleche.setColor(Color.BLACK);
+		fleche.setLayer(layer);
+		return fleche;
+	}
+    
+    
+	public Coordinate[] getpoint(Vent v){
+		double zoom = 0.4;
+		double dir = v.getDirection()*Math.PI/180;
+		double effetZoom = 1.5;
+		double effetAngl = 25;
+		double effetElem = 1.0;
+		double sousEffetZoom = 0.2;
+		double sousEffetAngl = 7;
+		double sousEffetElem = 0.25;
+		double n = v.getVitesse_nd();
+		ArrayList<Coordinate> list = new ArrayList<Coordinate>();
+		
+		//TODO Si vent < a 5
+		
+		Coordinate c = new Coordinate(v.getCoord().getLat(), v.getCoord().getLon());
+		list.add(c);
+		c = new Coordinate(v.getCoord().getLat() - Math.cos(dir)*zoom, v.getCoord().getLon() - Math.sin(dir)*zoom);
+		list.add(c);
+		c = new Coordinate(v.getCoord().getLat(), v.getCoord().getLon());
+		list.add(c);
+		c = new Coordinate(v.getCoord().getLat() + Math.cos(dir)*zoom, v.getCoord().getLon() + Math.sin(dir)*zoom);
+		list.add(c);
+		
+		while (n >= 50) {
+			if (effetZoom == 1.5) effetZoom = 1.00;
+			//System.out.println("Triangle"); 
+			c = new Coordinate(v.getCoord().getLat() + Math.cos((v.getDirection()+effetAngl)*Math.PI/180)*zoom*effetZoom, v.getCoord().getLon() + Math.sin((v.getDirection()+effetAngl)*Math.PI/180)*zoom*effetZoom);
+			list.add(c);
+			effetElem -= 0.2;
+			c = new Coordinate(v.getCoord().getLat() + Math.cos(dir)*zoom*effetElem, v.getCoord().getLon() + Math.sin(dir)*zoom*effetElem);
+			list.add(c);
+			n-=50;
+			if (n >= 50){
+				effetElem -= 0.0;
+				c = new Coordinate(v.getCoord().getLat() + Math.cos(dir)*zoom*effetElem, v.getCoord().getLon() + Math.sin(dir)*zoom*effetElem);
+				list.add(c);
+				effetAngl += 8;
+				effetZoom -= 0.15;
+			}else {
+				effetElem -= 0.10;
+				c = new Coordinate(v.getCoord().getLat() + Math.cos(dir)*zoom*effetElem, v.getCoord().getLon() + Math.sin(dir)*zoom*effetElem);
+				list.add(c);
+				effetAngl += 7;
+				effetZoom -= 0.1;
+			}
+			sousEffetElem = 0.15;
+			sousEffetAngl = 10;
+			sousEffetZoom = 0.07;
+		}
+		while (n >= 10) {
+			//System.out.println("Longue");
+			c = new Coordinate(v.getCoord().getLat() + Math.cos((v.getDirection()+effetAngl)*Math.PI/180)*zoom*effetZoom, v.getCoord().getLon() + Math.sin((v.getDirection()+effetAngl)*Math.PI/180)*zoom*effetZoom);
+			list.add(c);
+			c = new Coordinate(v.getCoord().getLat() + Math.cos(dir)*zoom*effetElem, v.getCoord().getLon() + Math.sin(dir)*zoom*effetElem);
+			list.add(c);
+			effetElem -= sousEffetElem;
+			c = new Coordinate(v.getCoord().getLat() + Math.cos(dir)*zoom*effetElem, v.getCoord().getLon() + Math.sin(dir)*zoom*effetElem);
+			list.add(c);
+			effetAngl += sousEffetAngl;
+			effetZoom -= sousEffetZoom;
+			/*
+			c = new Coordinate(coord.getLat() + Math.cos((direction+34)*Math.PI/180)*zoom*0.95, coord.getLon() + Math.sin((direction+34)*Math.PI/180)*zoom*0.95);
+			list.add(c);
+			c = new Coordinate(coord.getLat() + Math.cos(dir)*zoom*0.7, coord.getLon() + Math.sin(dir)*zoom*0.7);
+			list.add(c);
+			c = new Coordinate(coord.getLat() + Math.cos(dir)*zoom*0.65, coord.getLon() + Math.sin(dir)*zoom*0.65);
+			list.add(c);
+			*/
+			n-=10;
+		}
+		while (n >= 5 ) {
+			//System.out.println("Courte");   n-=5; 
+		}
+
+		//c = new Coordinate(coord.getLat() + Math.cos((direction+25)*Math.PI/180)*zoom*1.5, coord.getLon() + Math.sin((direction+25)*Math.PI/180)*zoom*1.5);
+		//list.add(c);
+		//c = new Coordinate(coord.getLat() + Math.cos(dir)*zoom, coord.getLon() + Math.sin(dir)*zoom);
+		//list.add(c);
+		c = new Coordinate(v.getCoord().getLat(), v.getCoord().getLon());
+		list.add(c);
+		
+		
+		Coordinate[] tab = new Coordinate[list.size()];
+		for (int i = 0 ; i < list.size() ; i++) {
+			tab[i] = list.get(i);
+		} 
+		return  tab;
+	}
+    
+    
+    
+
+	private JMapViewer map() {
         return treeMap.getViewer();
     }
 
@@ -307,7 +412,7 @@ public class Demo extends JFrame implements JMapViewerEventListener  {
      * @param args Main program arguments
      */
     public static void main(String[] args) {
-        new Demo().setVisible(true);
+        new Demo(new ArrayList<Vent>()).setVisible(true);
     }
 
     private void updateZoomParameters() {
