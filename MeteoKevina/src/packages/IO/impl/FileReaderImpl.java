@@ -5,15 +5,14 @@ package packages.IO.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import packages.IO.FileReader;
 import packages.IO.IOPackage;
-
 import packages.Prevision.Donnee;
+import ucar.ma2.Array;
+import ucar.nc2.NetcdfFile;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,6 +80,60 @@ public class FileReaderImpl extends MinimalEObjectImpl.Container implements File
 				return getDonnees();
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	@Override
+	public Array getVitesseU(NetcdfFile file, Double longitude, Double latitude) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getVitesseU(NetcdfFile file) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getVitesseV(NetcdfFile file, Double longitude, Double latitude) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getVitesseV(NetcdfFile file) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getPres(NetcdfFile file, Double longitude, Double latitude) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getPres(NetcdfFile file) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getTemp(NetcdfFile file) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getLat(NetcdfFile file) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Array getLon(NetcdfFile file) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 } //FileReaderImpl

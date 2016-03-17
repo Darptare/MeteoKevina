@@ -1,6 +1,7 @@
 package grib;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import ucar.ma2.Array;
 import ucar.ma2.InvalidRangeException;
@@ -11,7 +12,9 @@ public class Grib_read{
 	static NetcdfFile ncfile = null;
 
 
-	public static Array getVitesseU(NetcdfFile file,Double longitude, Double latitude) throws InvalidRangeException, IOException{
+	public static ArrayList<Array> getVitesseU(NetcdfFile file,Double longitude, Double latitude) throws InvalidRangeException, IOException{
+		ArrayList<Array> vitU = new ArrayList<Array>();
+		
 		String varNameLon = "lon"; 
 		String varNameLat = "lat"; 
 		String varNameU = "u-component_of_wind_height_above_ground"; 
@@ -43,16 +46,19 @@ public class Grib_read{
 						if(latitude.equals(dataLat.getDouble(j))){
 							dataU = u.read(i+":"+i+":1, 0:0:1, "+j+":"+j+":1, "+k+":"+k+":1");
 							System.out.println("Temps : "+dataT.getDouble(i)+" Longitude : "+dataLon.getDouble(k)+"; Latitude : "+dataLat.getDouble(j)+";  vent U(m/s) = "+dataU.getDouble(0)+".");
+							vitU.add(dataU);
 						}
 					}
 				}
 			}
 		}
 		System.out.println("--------------------------------------------------");
-		return dataU;
+		return vitU;
 	}
 	
-	public static Array getVitesseV(NetcdfFile file,Double longitude, Double latitude) throws InvalidRangeException, IOException{
+	public static ArrayList<Array> getVitesseV(NetcdfFile file,Double longitude, Double latitude) throws InvalidRangeException, IOException{
+		ArrayList<Array> vitV = new ArrayList<Array>();
+		
 		String varNameLon = "lon"; 
 		String varNameLat = "lat"; 
 		String varNameV = "v-component_of_wind_height_above_ground";
@@ -84,16 +90,19 @@ public class Grib_read{
 						if(latitude.equals(dataLat.getDouble(j))){
 							dataV = v.read(i+":"+i+":1, 0:0:1, "+j+":"+j+":1, "+k+":"+k+":1");
 							System.out.println("Temps : "+dataT.getDouble(i)+" Longitude : "+dataLon.getDouble(k)+"; Latitude : "+dataLat.getDouble(j)+";  vent V(m/s) = "+dataV.getDouble(0)+".");
+							vitV.add(dataV);
 						}
 					}
 				}
 			}
 		}
 		System.out.println("--------------------------------------------------");
-		return dataV;
+		return vitV;
 	}
 	
-	public static Array getPression(NetcdfFile file,Double longitude, Double latitude) throws InvalidRangeException, IOException{
+	public static ArrayList<Array> getPression(NetcdfFile file,Double longitude, Double latitude) throws InvalidRangeException, IOException{
+		ArrayList<Array> pression = new ArrayList<Array>();
+		
 		String varNameLon = "lon"; 
 		String varNameLat = "lat"; 
 		String varPres = "Pressure_reduced_to_MSL_msl";
@@ -124,13 +133,14 @@ public class Grib_read{
 						if(latitude.equals(dataLat.getDouble(j))){
 							dataPres = pres.read(i+":"+i+":1, "+j+":"+j+":1, "+k+":"+k+":1");
 							System.out.println("Temps : "+dataT.getDouble(i)+" Longitude : "+dataLon.getDouble(k)+"; Latitude : "+dataLat.getDouble(j)+"; Pression(Pa) = "+dataPres.getDouble(0)+".");
+							pression.add(dataPres);
 						}
 					}
 				}
 			}
 		}
 		System.out.println("--------------------------------------------------");
-		return dataPres;
+		return pression;
 	}
 
 	public static void main(String args[]) throws InvalidRangeException{

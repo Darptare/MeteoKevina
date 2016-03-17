@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="C:/Users/Kajine/Downloads/JMapViewer.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kajine/Downloads/JMapViewer_src.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Kajine/Downloads/netcdfAll-4.6.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Kajine/Downloads/slf4j-1.7.19/slf4j-simple-1.7.19.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
