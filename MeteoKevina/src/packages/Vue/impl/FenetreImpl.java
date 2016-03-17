@@ -3,6 +3,7 @@
 package packages.Vue.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import packages.Prevision.Vent;
 import packages.Vue.Carte;
 import packages.Vue.Fenetre;
 import packages.Vue.VuePackage;
@@ -103,9 +105,20 @@ public class FenetreImpl extends MinimalEObjectImpl.Container implements Fenetre
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	public void start(ArrayList<Vent> list) {
+
+		new Demo(list).setVisible(true);
+		
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
 	public void start() {
 
-		new Demo().setVisible(true);
+		new Demo(new ArrayList<Vent>()).setVisible(true);
 		
 	}
 
