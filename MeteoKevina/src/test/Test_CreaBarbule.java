@@ -19,9 +19,7 @@ public class Test_CreaBarbule {
 		VueFactory vue = new VueFactoryImpl();
 		Fenetre fen = vue.createFenetre();
 		
-		fen.ouvrir();
-		
-		
+		fen.start();
 		
 	}
 
