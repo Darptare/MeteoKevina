@@ -28,7 +28,7 @@
         <eParameters name="longitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eOperations>
       <eOperations name="afficherBarb" lowerBound="1">
-        <eParameters name="donnee" eType="#//Prevision/Vent"/>
+        <eParameters name="donnee" eType="#//Prevision/chage"/>
       </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InterView" abstract="true" interface="true"/>
@@ -86,9 +86,9 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="temps" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="vent" upperBound="-1"
-          eType="#//Prevision/Vent"/>
+          eType="#//Prevision/chage"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Vent">
+    <eClassifiers xsi:type="ecore:EClass" name="chage">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="vitesse_nd" lowerBound="1"

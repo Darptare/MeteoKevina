@@ -209,7 +209,7 @@
         </children>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_U_uaAet_EeWWoaF6_MQTPA" fontColor="4210752" fontName="Segoe UI" fontHeight="14" fillColor="13761016" lineColor="8421504"/>
         <element xmi:type="ecore:EClass" href="Packages.ecore#//Edition/EditDonnee"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_uaAut_EeWWoaF6_MQTPA" x="10" y="149" width="228" height="152"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_uaAut_EeWWoaF6_MQTPA" x="10" y="149" width="218" height="148"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_TK2M8OuIEeWWoaF6_MQTPA" type="2003">
         <children xmi:type="notation:Node" xmi:id="_TK2M8-uIEeWWoaF6_MQTPA" type="4002"/>
@@ -347,26 +347,26 @@
         <children xmi:type="notation:Node" xmi:id="_cLC7wOuAEeWWoaF6_MQTPA" type="4002"/>
         <children xmi:type="notation:Node" xmi:id="_cLC7weuAEeWWoaF6_MQTPA" type="5004">
           <children xmi:type="notation:Node" xmi:id="_dBBhgOuAEeWWoaF6_MQTPA" type="2001">
-            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/Vent/direction"/>
+            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/chage/direction"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_dBBhgeuAEeWWoaF6_MQTPA"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_dZd1cOwqEeWoBoV02aFqWQ" type="2001">
-            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/Vent/vitesse_nd"/>
+            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/chage/vitesse_nd"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_dZd1cewqEeWoBoV02aFqWQ"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_jTlOQOuMEeWWoaF6_MQTPA" type="2001">
-            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/Vent/vitesse_u"/>
+            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/chage/vitesse_u"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_jTlOQeuMEeWWoaF6_MQTPA"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_kd5FQOuMEeWWoaF6_MQTPA" type="2001">
-            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/Vent/vitesse_v"/>
+            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/chage/vitesse_v"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_kd5FQeuMEeWWoaF6_MQTPA"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_FJ9IQOuMEeWWoaF6_MQTPA" type="2001">
-            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/Vent/value"/>
+            <element xmi:type="ecore:EAttribute" href="Packages.ecore#//Prevision/chage/value"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_FJ9IQeuMEeWWoaF6_MQTPA"/>
           </children>
-          <styles xmi:type="notation:DrawerStyle" xmi:id="_cLC7wuuAEeWWoaF6_MQTPA" collapsed="true"/>
+          <styles xmi:type="notation:DrawerStyle" xmi:id="_cLC7wuuAEeWWoaF6_MQTPA"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_cLC7w-uAEeWWoaF6_MQTPA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_cLC7xOuAEeWWoaF6_MQTPA"/>
         </children>
@@ -376,7 +376,7 @@
           <styles xmi:type="notation:FilteringStyle" xmi:id="_cLC7yOuAEeWWoaF6_MQTPA"/>
         </children>
         <styles xmi:type="notation:ShapeStyle" xmi:id="_cLCUseuAEeWWoaF6_MQTPA" fontColor="4210752" fontName="Segoe UI" fontHeight="14" fillColor="13761016" lineColor="8421504"/>
-        <element xmi:type="ecore:EClass" href="Packages.ecore#//Prevision/Vent"/>
+        <element xmi:type="ecore:EClass" href="Packages.ecore#//Prevision/chage"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cLCUsuuAEeWWoaF6_MQTPA" x="65" y="389"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_FqRnEOuMEeWWoaF6_MQTPA" type="2003">
@@ -679,7 +679,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_alYHwOwrEeWoBoV02aFqWQ" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_alYHwewrEeWoBoV02aFqWQ" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="Packages.ecore#//Prevision/Vent/coord"/>
+    <element xmi:type="ecore:EReference" href="Packages.ecore#//Prevision/chage/coord"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_alYHwuwrEeWoBoV02aFqWQ" points="[37, -17, -145, 68]$[183, -116, 1, -31]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_alZ88OwrEeWoBoV02aFqWQ" id="(0.1258741258741259,0.45652173913043476)"/>
   </edges>
